@@ -1,0 +1,151 @@
+# 🚀 Terraform AWS Infrastructure (Production Ready)
+
+## 📌 Project Overview
+
+This project provisions a **production-ready AWS infrastructure** using Infrastructure as Code (IaC) with Terraform.
+It includes networking, compute, and Kubernetes setup following best practices for scalability, security, and automation.
+
+---
+
+## 🏗️ Architecture
+
+* Custom VPC with public and private subnets
+* Internet Gateway & Route Tables
+* Security Groups for controlled access
+* Amazon EKS Cluster (Managed Kubernetes)
+* Node Groups (Auto Scaling enabled)
+* IAM Roles & Policies (least privilege)
+
+---
+
+## 🛠️ Technologies Used
+
+* Terraform
+* AWS (VPC, EKS, IAM, EC2)
+* Kubernetes
+* Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── main.tf              # Core infrastructure resources
+├── variables.tf         # Input variables
+├── outputs.tf           # Output values
+├── providers.tf         # Provider configuration
+├── backend.tf           # Remote backend (S3 + DynamoDB)
+├── locals.tf            # Common tags and reusable values
+├── terraform.tfvars     # Environment-specific values
+```
+
+---
+
+## ⚙️ Infrastructure Components
+
+### 🌐 VPC
+
+* CIDR: 10.0.0.0/16
+* Public & Private subnets across multiple AZs
+* High availability design
+
+### ☸️ EKS Cluster
+
+* Managed Kubernetes cluster
+* Worker nodes using Node Groups
+* Auto Scaling enabled
+
+### 🔐 Security
+
+* IAM roles with least privilege
+* Security Groups for controlled traffic
+* Private subnets for backend resources
+
+---
+
+## 💾 Remote Backend (State Management)
+
+Terraform state is stored securely using:
+
+* **S3 Bucket** → State file storage
+* **DynamoDB** → State locking
+
+✔ Prevents conflicts in team environments
+✔ Ensures consistency and safety
+
+---
+
+## 🚀 How to Deploy
+
+### 1️⃣ Initialize Terraform
+
+```bash
+terraform init
+```
+
+### 2️⃣ Validate Configuration
+
+```bash
+terraform validate
+```
+
+### 3️⃣ Plan Infrastructure
+
+```bash
+terraform plan
+```
+
+### 4️⃣ Apply Changes
+
+```bash
+terraform apply
+```
+
+---
+
+## 📊 Outputs
+
+* EKS Cluster Name
+* VPC ID
+* Subnet IDs
+* Node Group Details
+
+---
+
+## 💰 Cost Optimization
+
+* Uses managed services (EKS)
+* Supports Spot instances (optional)
+* Scalable node groups
+
+---
+
+## 🔥 Key Features
+
+* Fully automated infrastructure
+* Scalable and production-ready design
+* Secure and modular Terraform code
+* Easy to extend for CI/CD pipelines
+
+---
+
+## 📚 Future Improvements
+
+* Add ALB Ingress Controller
+* Implement CI/CD pipeline (Jenkins / GitHub Actions)
+* Integrate monitoring (Prometheus + Grafana)
+* Add ArgoCD for GitOps
+
+---
+
+## 👨‍💻 Author
+
+**Hanamant Taranal**
+DevOps Engineer | AWS | Terraform | Kubernetes
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
